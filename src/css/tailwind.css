@@ -4,7 +4,7 @@
 
 /* Card */
 .Card {
-  @apply w-48 h-60 shadow-md rounded-lg shrink-0 transform transition-all hover:-translate-y-4 hover:shadow-xl cursor-pointer;
+  @apply w-48 h-60 mb-8 shadow-xl rounded-lg shrink-0 transform transition-all hover:-translate-y-4 hover:shadow-lg cursor-pointer snap-center;
 }
 .Card:nth-child(odd) .Card--details {
   @apply bg-secondary dark:bg-gray-700;
@@ -31,16 +31,21 @@
 }
 
 /* Trending */
+.Trending {
+  @apply drop-shadow-md;
+}
 .Trending--details {
-  @apply w-full h-96 bg-cover bg-center rounded-xl;
+  @apply w-full h-96 bg-cover bg-center rounded-xl transition-transform ease-in-out hover:-translate-y-1;
 }
 .Trending--details__title {
-  @apply text-3xl px-8 pt-8 pb-2 font-bold text-white;
+  @apply text-3xl px-8 pt-8 pb-2 font-bold text-white drop-shadow-lg;
 }
 .Trending--details__description {
-  @apply text-sm px-8 text-white mr-24;
+  @apply text-sm px-8 text-white mr-24 drop-shadow-lg;
 }
-
+.Trending-Grid {
+  @apply drop-shadow-md;
+}
 .Trending-Grid:nth-child(odd) .Trending--details__title,
 .Trending-Grid:nth-child(odd) .Trending--details__description {
   @apply text-right mr-auto ml-24;
