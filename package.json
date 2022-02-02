@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tw:watch": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.18"
+  }
+}
