@@ -4,19 +4,19 @@
 
 /* Card */
 .Card {
-  @apply w-48 h-64 shadow-md rounded-lg shrink-0 transform transition-all hover:-translate-y-4 hover:shadow-xl cursor-pointer;
+  @apply w-48 h-60 shadow-md rounded-lg shrink-0 transform transition-all hover:-translate-y-4 hover:shadow-xl cursor-pointer;
 }
 .Card:nth-child(odd) .Card--details {
-  @apply bg-secondary;
+  @apply bg-secondary dark:bg-gray-700;
 }
 .Card:nth-child(odd) .Card--details p {
   @apply text-white;
 }
 .Card:nth-child(even) .Card--details {
-  @apply bg-white;
+  @apply bg-white dark:bg-gray-800;
 }
 .Card:nth-child(even) .Card--details p {
-  @apply text-tertiary;
+  @apply text-tertiary dark:text-white;
 }
 
 /* Card Details */
@@ -24,13 +24,40 @@
   @apply w-full h-2/5 px-4 rounded-b-lg;
 }
 .Card--details__title {
-  @apply font-bold text-xl py-2;
+  @apply font-semibold text-xl py-2;
+}
+.Card--details__description {
+  @apply text-base leading-5;
 }
 
-/* Starred */
-.Starred--details {
-  @apply w-full h-96 bg-cover rounded-xl;
+/* Trending */
+.Trending--details {
+  @apply w-full h-96 bg-cover bg-center rounded-xl;
 }
-.Starred--details__title {
-  @apply text-3xl px-8 pt-8 pb-2 font-semibold text-white;
+.Trending--details__title {
+  @apply text-3xl px-8 pt-8 pb-2 font-bold text-white;
+}
+.Trending--details__description {
+  @apply text-sm px-8 text-white mr-24;
+}
+
+.Trending-Grid:nth-child(odd) .Trending--details__title,
+.Trending-Grid:nth-child(odd) .Trending--details__description {
+  @apply text-right mr-auto ml-24;
+}
+
+/* FAQ */
+.Footer--link {
+  @apply block text-sm text-gray-400;
+}
+.Titles {
+  @apply text-2xl font-bold text-primary lg:text-3xl dark:text-white;
+}
+.FAQs--item {
+  @apply text-xl text-primary font-semibold dark:text-white;
+}
+
+/* Nav items */
+.Nav--item {
+  @apply font-semibold text-primary dark:text-white;
 }

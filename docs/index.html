@@ -7,74 +7,204 @@
     <link rel="stylesheet" href="../docs/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap" rel="stylesheet">
     <title>Tailwind Course</title>
 </head>
-<body class="font-Montserrat">
-    <nav></nav>
-    <div id="tabBar"></div>
-    <section class="w-full h-screen">
+<body class="font-Montserrat dark:bg-gray-900">
+    <nav class="w-full h-14 fixed z-10 p-4 hidden bg-white justify-between lg:flex dark:bg-gray-800">
+        <div class="h-auto w-auto">
+            <p class="text-xl text-primary font-bold dark:text-white">Platzi Travel</p>
+        </div>
+        <!-- Navigation -->
+        <div class="flex space-x-8">
+            <a class="Nav--item" href="#recommendations">Locations</a>
+            <a class="Nav--item" href="#trending">Stays</a>
+            <a class="Nav--item" href="#faqs">FAQs</a>
+            <a class="Nav--item" href="#aboutUs">About us</a>
+        </div>
+        <!-- Dark mode -->
+        <div class="flex space-x-4">
+            <a href="#search">
+                <img src="./svg/search.svg" height="20" width="20" alt="Search"/>
+            </a>
+            <button class="toggle">
+                <img src="./svg/moon.svg" height="20" width="20" alt="Search"/>
+            </button>
+            <a href="javascript:;">
+                <img src="./svg/user.svg" height="20" width="20" alt="User"/>
+            </a>
+        </div>
+    </nav>
+    <main class="w-full">
         <!-- Home -->
-        <div id="home">
-            <div class="w-full h-3/4">
-                <div class="w-full h-full flex flex-col absolute space-y-96 py-4 items-center">
-                    <input class="outline-none py-3 px-4 rounded-full shadow-lg transition-all duration-300 focus-within:shadow-sm focus:ring-2 focus:w-11/12" type="search" placeholder="San Francisco" name="" id=""/>
-                    <button class="w-48 rounded-full text-lg text-primary font-semibold p-4 bg-white shadow-lg transition-all duration-500 ease-in-out hover:bg-primary hover:text-white hover:scale-110">
-                        Explorar
+        <div id="home" class="lg:h-screen/2">
+            <div class="w-full h-full relative">
+                <div class="w-full h-full flex flex-col absolute justify-between py-4 lg:space-y-0 lg:items-start lg:pt-40 lg:justify-start">
+                    <button class="toggle rounded-full text-primary self-end font-semibold px-5 py-2 bg-white shadow-lg mb-6 mr-4 lg:hidden">
+                        <img class="m-auto" src="./svg/moon.svg" height="20" width="20" alt="Search"/>
+                    </button>
+                    <input id="search" class="outline-none mb-72 py-3 px-4 rounded-full shadow-lg self-center transition-all duration-500 ease-in-out focus-within:shadow-sm focus:ring-2 focus:w-11/12 lg:mb-0 lg:hidden" type="search" placeholder="San Francisco" name="search"/>
+                    <h1 class="hidden h-auto text-4xl ml-16 font-bold pb-6 lg:w-2/5 lg:flex">Find more locations like this</h1>
+                    <button class="w-48 rounded-full text-lg text-primary font-semibold self-center p-4 mb-10 bg-white shadow-lg transition-all duration-500 ease-in-out hover:bg-primary hover:text-white hover:scale-110 lg:ml-16 lg:self-start lg:mb-0">
+                        Explore more
                     </button>
                 </div>
-                <div class="w-full h-screen">
-                    <img class="object-cover w-full h-full" src="./img/sanFranciscoDesktop.jpg" alt="San Francisco"/>
+                <div class="w-full lg:h-full lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+                    <img class="object-cover w-full h-full lg:hidden" src="./img/sanFrancisco.jpg" alt="San Francisco"/>
                 </div>
             </div>
         </div>
-        <!-- Recomendadas -->
-        <div id="recomendados" class="p-6">
-            <p class="text-3xl font-semibold text-primary">Recomendados</p>
-            <div class="w-auto h-80 items-center mt-6 overflow-x-auto overflow-y-hidden overscroll-contain flex space-x-4">
+        <!-- Recomendations -->
+        <div id="recommendations" class="pt-8 px-6">
+            <p class="Titles">Our recommendations</p>
+            <div class="w-auto h-80 pt-8 pb-8 overflow-x-auto overflow-y-hidden overscroll-contain flex space-x-4 items-start scrollbar-hide">
                 <div class="Card">
-                    <div class="w-full h-3/5 rounded-t-lg bg-norway bg-cover"></div>
+                    <div class="w-full h-4/5 rounded-t-lg bg-norway bg-cover bg-center"></div>
                     <div class="Card--details">
-                        <p class="Card--details__title">Noruega</p>
-                        <p>Paisajes increíbles</p>
+                        <p class="Card--details__title">Norway</p>
+                        <p class="Card--details__description">Beautiful landscapes</p>
                     </div>
                 </div>
                 <div class="Card">
-                    <div class="w-full h-3/5 rounded-t-lg bg-new_york bg-cover"></div>
+                    <div class="w-full h-4/5 rounded-t-lg bg-new_york bg-cover bg-center"></div>
                     <div class="Card--details">
                         <p class="Card--details__title">New York</p>
-                        <p>La gran manzana</p>
+                        <p class="Card--details__description">Concrete jungle</p>
                     </div>
                 </div>
                 <div class="Card">
-                    <div class="w-full h-3/5 rounded-t-lg bg-norway bg-cover"></div>
+                    <div class="w-full h-4/5 rounded-t-lg bg-sydney bg-cover bg-center"></div>
                     <div class="Card--details">
-                        <p class="Card--details__title">Noruega</p>
-                        <p>Paisajes increíbles</p>
+                        <p class="Card--details__title">Sydney</p>
+                        <p class="Card--details__description">Big City</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-4/5 rounded-t-lg bg-europe bg-cover bg-center"></div>
+                    <div class="Card--details">
+                        <p class="Card--details__title">Europe</p>
+                        <p class="Card--details__description">An old magical place</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-4/5 rounded-t-lg bg-seattle bg-cover bg-center"></div>
+                    <div class="Card--details">
+                        <p class="Card--details__title">Seattle</p>
+                        <p class="Card--details__description">Diverse city</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-4/5 rounded-t-lg bg-switzerland bg-cover bg-center"></div>
+                    <div class="Card--details">
+                        <p class="Card--details__title">Switzerland</p>
+                        <p class="Card--details__description">A calm place for yourself</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-4/5 rounded-t-lg bg-yosemite bg-center"></div>
+                    <div class="Card--details">
+                        <p class="Card--details__title">Yosemite</p>
+                        <p class="Card--details__description">A break from the world</p>
+                    </div>
+                </div>
+                <div class="Card">
+                    <div class="w-full h-4/5 rounded-t-lg bg-iceland bg-center"></div>
+                    <div class="Card--details">
+                        <p class="Card--details__title">Iceland</p>
+                        <p class="Card--details__description">A cold and interesting place</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Destacadas -->
-        <div id="destacadas" class="px-6 h-full w-full">
-            <p class="text-3xl font-semibold text-primary pb-6 mt-2">Rentas recomendadas</p>
-
-            <div class="w-full flex flex-col space-y-6 justify-center">
-                <div class="Starred">
-                    <div class="Starred--details bg-chicago">
-                        <p class="Starred--details__title">Chicago</p>
-                        <p class="text-sm pl-8 text-white mr-24">2 habitaciones, baño y cocina.</p>
-                    </div>
-                </div>
-                <div class="Starred">
-                    <div class="Starred--details bg-LA">
-                        <p class="Starred--details__title">Los Angeles</p>
-                        <p class="text-sm pl-8 text-white mr-24">4 habitaciones, 2 baños, cocina y piscina privada</p>
+        <!-- Trending -->
+        <div id="trending" class="pt-6 px-6 w-full">
+            <p class="Titles pb-6 mt-2">Trending Stays</p>
+            <div class="w-full flex flex-col">
+                <div class="Trending">
+                    <div class="Trending--details bg-chicago">
+                        <p class="Trending--details__title lg:text-right">Chicago</p>
+                        <p class="Trending--details__description lg:text-right lg:mr-auto lg:ml-24">2 rooms, bathroom y kitchen.</p>
                     </div>
                 </div>
             </div>
+            <div class="w-full grid grid-cols-1 mt-6 gap-6 lg:grid-rows-2 lg:grid-cols-5">
+                <div class="Trending-Grid lg:row-span-2 lg:col-span-2">
+                    <div class="Trending--details bg-LA lg:h-full">
+                        <p class="Trending--details__title lg:text-right">Los Angeles</p>
+                        <p class="Trending--details__description lg:text-right lg:mr-auto lg:ml-24">4 rooms, 2 bathrooms, kitchen and private pool.</p>
+                    </div>
+                </div>
+                <div class="Trending-Grid lg:row-span-1 lg:col-span-3">
+                    <div class="Trending--details bg-miami">
+                        <p class="Trending--details__title lg:text-right">Miami</p>
+                        <p class="Trending--details__description lg:text-right lg:mr-auto lg:ml-24">4 rooms, 2 bathrooms, kitchen and private pool.</p>
+                    </div>
+                </div>
+                <div class="Trending-Grid lg:row-span-1 lg:col-span-3">
+                    <div class="Trending--details bg-bali">
+                        <p class="Trending--details__title lg:text-right">Bali</p>
+                        <p class="Trending--details__description lg:text-right lg:mr-auto lg:ml-24">4 rooms, 2 bathrooms, kitchen and private pool.</p>
+                    </div>
+                </div>                
+            </div>
         </div>
-    </section>
-    <footer></footer>
+        <!-- FAQ -->
+        <div id="faqs" class="p-6 px-6 w-full">
+            <p class="Titles pb-6 mt-2">FAQs</p>
+            <div class="flex flex-col space-y-4 dark:text-white">
+                <p class="FAQs--item">Payment methods</p>
+                <p>We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+                <p class="FAQs--item">Cancellation</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, molestiae.</p>
+                <p class="FAQs--item">Long Stays</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Id, quis libero. <br/>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum fugit suscipit officia veritatis officiis, facere tempore cupiditate repellendus quod quae?</p>
+                <p class="FAQs--item">Cancellation Policy</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem assumenda similique odio laborum dignissimos laboriosam?</p>
+                <p class="FAQs--item">Policies</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem assumenda similique odio laborum dignissimos laboriosam?</p>
+            </div>
+        </div>
+    </main>
+    <!-- TabBar -->
+    <div id="tabBar" class="w-full bg-white h-16 left-0 bottom-0 shadow-lg fixed flex space-x-8 justify-center items-center lg:hidden dark:bg-gray-800">
+        <a href="#home">
+            <img src="./svg/home.svg" height="20" width="20" alt="Home"/>
+        </a>
+        <a href="#search">
+            <img src="./svg/search.svg" height="20" width="20" alt="Search"/>
+        </a>
+        <a href="#recommendations">
+            <img src="./svg/heart.svg" height="20" width="20" alt="Featured"/>
+        </a>
+        <a href="javascript:;">
+            <img src="./svg/user.svg" height="20" width="20" alt="User"/>
+        </a>
+        <button class="toggle">
+            <img src="./svg/moon.svg" height="20" width="20" alt="Search"/>
+        </button>
+    </div>
+    <!-- Footer -->
+    <footer id="aboutUs" class="w-full bg-gray-50 p-6 mt-6 mb-16 space-y-2 border-1 lg:mb-0">
+        <a href="#" class="block text-lg text-gray-400 font-semibold">About Us</a>
+        <a href="#" class="Footer--link">Investors</a>
+        <a href="#" class="Footer--link">Jobs</a>
+        <a href="#" class="Footer--link">Privacy policy</a>
+        <a href="#" class="Footer--link">Terms and Conditions</a>
+        <a href="#" class="Footer--link">Platzi Travel, Inc</a>
+        <a href="#" class="Footer--link">Follow Us </a>
+        <div class="space-x-2">
+            <img class="inline cursor-pointer" src="./svg/twitter.svg" alt="Follow us on Twitter"/>
+            <img class="inline cursor-pointer" src="./svg/instagram.svg" alt="Follow us on Instagram"/>
+        </p>
+    </footer>
+    <script>
+        const htmlElement = document.querySelector('html');
+        const toggleButton = document.querySelectorAll('.toggle');
+        toggleButton.forEach( item => {
+            item.addEventListener('click', () => {
+                htmlElement.classList.toggle( 'dark' );
+            });
+        });
+    </script>
 </body>
 </html>

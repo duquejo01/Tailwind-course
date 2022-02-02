@@ -1,10 +1,14 @@
 module.exports = {
   content: [
-    './public/*.html',
+    './docs/*.html',
     './src/**/*.{html,js}'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      height: () => ({
+        'screen/2': '50vh',
+      }),
       backgroundImage: {
         sanFrancisco: "url('../img/sanFrancisco.jpg')",
 			  sanFranciscoDesktop: "url('../img/sanFranciscoDesktop.jpg')",
@@ -40,8 +44,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      width: [ 'responsive', 'hover', 'focus' ]
+      display: [ 'responsive', 'hover', 'focus' ]
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 }

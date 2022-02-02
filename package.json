@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tw:watch": "npx tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch",
+    "tw:watch": "npx tailwindcss -i ./src/css/tailwind.css -o ./docs/css/tailwind.css --watch",
     "tw:production": "npx tailwindcss -i ./src/css/tailwind.css -o ./docs/css/tailwind.css --minify"
   },
   "keywords": [],
@@ -15,5 +15,8 @@
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.18"
+  },
+  "dependencies": {
+    "tailwind-scrollbar-hide": "^1.1.7"
   }
 }
