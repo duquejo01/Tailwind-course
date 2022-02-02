@@ -1,6 +1,7 @@
 {
   "name": "tailwind-course",
   "version": "1.0.0",
+  "homepage": "https://duquejo01.github.io/Tailwind-course/",
   "description": "",
   "main": "index.js",
   "scripts": {
